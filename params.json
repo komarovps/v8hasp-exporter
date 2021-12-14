@@ -1,0 +1,5 @@
+{
+    // пути относительно каталога src
+    "hsmon-path": "./oscript_modules/v8haspmonitor/tools/HaspMonitor/HaspMonitor.exe",
+    "nethasp-path": "./../nethasp.ini" 
+}
