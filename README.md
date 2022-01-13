@@ -42,8 +42,6 @@ scrape_configs:
         - '1ckey02.local.ru:5000'
         - '1ckey03.local.ru:5000'
         - '1ckey04.local.ru:5000'
-    params:
-      nologins: ['true']
 ```
 ## Метрики
 
@@ -75,7 +73,23 @@ hasp_sessions_info{lm_name="1ckey01.local.ru",ma="1",host_address="1.2.10.47",ho
 ```
 
 ## Отключение вывода списка подключений
-На больших ключах получение списка подключений может занимать продолжительное время. Если подключения не нужны их можно отключить передав в запрос параметр `nologins`.
-```
-http://localhost:5000/hasp_metrics?nologins
+На больших ключах получение списка подключений может занимать продолжительное время. Если подключения не нужны их можно отключить передав в запрос параметр `nologins` через `params` в `prometheus.yml`.
+
+### Пример `prometheus.yml` 
+```yml
+global:
+  scrape_interval:     1m
+  scrape_timeout:      10s
+  evaluation_interval: 1m
+
+scrape_configs:
+  - job_name: 'hasp keys metrics'
+    scrape_interval: 1m
+    scrape_timeout: 45s
+    metrics_path: '/hasp_metrics'
+    static_configs:
+      - targets:
+        - '1ckey01.local.ru:5000'
+    params:
+      nologins: ['true']
 ```
