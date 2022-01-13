@@ -42,6 +42,8 @@ scrape_configs:
         - '1ckey02.local.ru:5000'
         - '1ckey03.local.ru:5000'
         - '1ckey04.local.ru:5000'
+    params:
+      nologins: ['true']
 ```
 ## Метрики
 
