@@ -43,6 +43,9 @@ scrape_configs:
         - '1ckey03.local.ru:5000'
         - '1ckey04.local.ru:5000'
 ```
+
+### Установка как служба через ansible
+[ansible-playbook](https://github.com/komarovps/ansible-v8hasp-exporter)
 ## Метрики
 
 ### hasp_lm_info
