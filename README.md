@@ -46,6 +46,7 @@ scrape_configs:
 
 ### Установка как служба через ansible
 [ansible-playbook](https://github.com/komarovps/ansible-v8hasp-exporter)
+
 ## Метрики
 
 ### hasp_lm_info
@@ -96,3 +97,12 @@ scrape_configs:
     params:
       nologins: ['true']
 ```
+
+## Grafana
+
+```
+sum by (lm_name,max_users,ma) (hasp_cur_load{max_users!="-1"})
+```
+![Example](http://dl3.joxi.net/drive/2023/04/14/0056/1184/3716256/56/a2b05b842c.jpg)
+
+
