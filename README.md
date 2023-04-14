@@ -108,7 +108,9 @@ sum by (lm_name,max_users,ma) (hasp_cur_load{max_users!="-1"})
 legend: {{lm_name}} / {{max_users}}
 ```
 Результат:
+
 ![Example](http://dl3.joxi.net/drive/2023/04/14/0056/1184/3716256/56/a2b05b842c.jpg)
+
 
 <details>
 <summary>Panel JSON</summary>
