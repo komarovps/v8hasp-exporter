@@ -114,6 +114,7 @@ legend: {{lm_name}} / {{max_users}}
 
 <details>
 <summary>Panel JSON</summary>
+
 ```JSON
 {
   "datasource": {
@@ -186,4 +187,5 @@ legend: {{lm_name}} / {{max_users}}
   "description": ""
 } 
 ```
+
 </details>
