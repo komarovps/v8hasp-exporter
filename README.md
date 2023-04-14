@@ -99,10 +99,89 @@ scrape_configs:
 ```
 
 ## Grafana
-
+Запрос:
 ```
 sum by (lm_name,max_users,ma) (hasp_cur_load{max_users!="-1"})
 ```
+Формат легенды:
+```
+legend: {{lm_name}} / {{max_users}}
+```
+Результат:
 ![Example](http://dl3.joxi.net/drive/2023/04/14/0056/1184/3716256/56/a2b05b842c.jpg)
 
-
+<details>
+<summary>Panel JSON</summary>
+```JSON
+{
+  "datasource": {
+    "uid": "NJXUz3dnz",
+    "type": "prometheus"
+  },
+  "fieldConfig": {
+    "defaults": {
+      "mappings": [],
+      "thresholds": {
+        "mode": "percentage",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          }
+        ]
+      },
+      "color": {
+        "mode": "thresholds"
+      },
+      "noValue": "0",
+      "unit": "Lic"
+    },
+    "overrides": []
+  },
+  "gridPos": {
+    "h": 21,
+    "w": 9,
+    "x": 0,
+    "y": 1
+  },
+  "id": 28,
+  "options": {
+    "reduceOptions": {
+      "values": false,
+      "calcs": [
+        "lastNotNull"
+      ],
+      "fields": ""
+    },
+    "orientation": "horizontal",
+    "textMode": "value_and_name",
+    "colorMode": "value",
+    "graphMode": "area",
+    "justifyMode": "auto",
+    "text": {}
+  },
+  "pluginVersion": "9.4.7",
+  "targets": [
+    {
+      "datasource": {
+        "uid": "NJXUz3dnz",
+        "type": "prometheus"
+      },
+      "exemplar": true,
+      "expr": "sum by (lm_name,max_users,ma) (hasp_cur_load{max_users!=\"-1\"})",
+      "format": "time_series",
+      "hide": false,
+      "instant": false,
+      "interval": "",
+      "legendFormat": "{{lm_name}} / {{max_users}}",
+      "refId": "A",
+      "editorMode": "code"
+    }
+  ],
+  "title": "HASP Keys",
+  "transformations": [],
+  "type": "stat",
+  "description": ""
+} 
+```
+</details>
